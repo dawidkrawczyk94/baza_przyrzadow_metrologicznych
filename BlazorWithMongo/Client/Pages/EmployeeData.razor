@@ -1,0 +1,94 @@
+﻿@page "/employeerecords"
+@inherits EmployeeDataModel
+
+<h1>Lista pracowników</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <a href='/employee/add' class="btn btn-primary" role="button"><i class="fa fa-user-plus"></i> Dodaj pracownika</a>
+    </div>
+    <div class="input-group col-md-4 offset-md-4">
+        <input type="text" class="form-control" placeholder="Szukaj pracowników" @bind="SearchString" />
+        <div class="input-group-append">
+            <button class="btn btn-info" @onclick="SearchEmployee">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+    </div>
+</div>
+<br />
+
+@if (empList == null)
+{
+    <p><em>Ładowanie...</em></p>
+}
+else
+{
+    <table class='table'>
+        <thead>
+            <tr>
+                <th>Imię i Nazwisko</th>
+                <th>Nr ewidencyjny</th>
+                <th>Dział</th>
+                <th>Ilość przyrządów</th>
+                <th>Akcje</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var emp in empList)
+            {
+                <tr>
+                    <td>@emp.Name</td>
+                    <td>@emp.nrew</td>
+                    <td>@emp.dzial</td>
+                    <td>@GetToolCount(emp.Name)</td>
+                    <td>
+                        <a href='/employee/edit/@emp.Id' class="btn btn-outline-dark" role="button"> <i class="fa fa-pencil-square-o"></i> Modyfikuj</a>
+                        <button class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteEmpModal"
+                                @onclick="(()=>DeleteConfirm(emp.Id))">
+                            <i class="fa fa-trash-o"></i>
+                            Usuń
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<div class="modal fade" id="deleteEmpModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Potwierdź usunięcie!!!</h3>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">X</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <tr>
+                        <td>Imię i Nazwisko</td>
+                        <td>@emp.Name</td>
+                    </tr>
+                    <tr>
+                        <td>Nr ewidencyjny</td>
+                        <td>@emp.nrew</td>
+                    </tr>
+                    <tr>
+                        <td>Dział</td>
+                        <td>@emp.dzial</td>
+                    </tr>
+                    <tr>
+                        <td>Ilość przyrządów</td>
+                        <td>@GetToolCount(emp.Name)</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger" @onclick="(async () => await DeleteEmployee(emp.Id))" data-dismiss="modal">Usuń</button>
+                <button data-dismiss="modal" class="btn btn-light">Anuluj</button>
+            </div>
+        </div>
+    </div>
+</div>

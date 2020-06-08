@@ -1,0 +1,58 @@
+﻿@page "/tool/add"
+@page "/tool/edit/{toolID}"
+@inherits AddEditToolModel
+
+<h1>@Title przyrząd</h1>
+<hr />
+
+<EditForm Model="@tool" OnValidSubmit="SaveTool">
+    <DataAnnotationsValidator />
+    <div class="form-group row">
+        <label class="control-label col-md-12">Numer</label>
+        <div class="col-md-4">
+            <input class="form-control" @bind="tool.numer_przyrzadu" />
+        </div>
+        <ValidationMessage For="@(() => tool.numer_przyrzadu)" />
+    </div>
+    <div class="form-group row">
+        <label class="control-label col-md-12">Nazwa</label>
+        <div class="col-md-4">
+            <input class="form-control" @bind="tool.nazwa" />
+        </div>
+        <ValidationMessage For="@(() => tool.nazwa)" />
+    </div>
+    <div class="form-group row">
+        <label class="control-label col-md-12">Właściciel</label>
+        <div class="col-md-4">
+            <select class="form-control" @bind="tool.wlasciciel">
+                <option value="">-- Wybierz właściciela przyrządu --</option>
+                @foreach (var emp in empList)
+                {
+                    <option value="@emp.Name">@emp.Name</option>
+                }
+
+            </select>
+        </div>
+        <ValidationMessage For="@(() => tool.wlasciciel)" />
+    </div>
+    <div class="form-group row">
+        <label class="control-label col-md-12">Data ostatniej kontroli</label>
+        <div class="col-md-4">
+            <input type="date" class="form-control" @bind-value="tool.data_ostatniej_kontroli" />
+
+
+        </div>
+        <ValidationMessage For="@(() => tool.data_ostatniej_kontroli)" />
+    </div>
+    <div class="form-group row">
+        <label class="control-label col-md-12">Data następnej kontroli</label>
+        <div class="col-md-4">
+            <input type="date" class="form-control" @bind-value="tool.data_nastepnej_kontroli" />
+        </div>
+        <ValidationMessage For="@(() => tool.data_nastepnej_kontroli)" />
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Zapisz</button>
+        <button class="btn btn-light" @onclick="Cancel">Anuluj</button>
+    </div>
+</EditForm>

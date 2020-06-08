@@ -1,0 +1,102 @@
+﻿@page "/"
+@page "/expiredtools"
+@inherits ToolDataModel
+
+<h1>Przyrządy po terminie</h1>
+
+<div class="row">
+    
+
+    <div class="input-group col-md-4 offset-md-4">
+        <input type="text" class="form-control" placeholder="Szukaj przyrządu po terminie" @bind="SearchString" />
+        <div class="input-group-append">
+            <button class="btn btn-info" @onclick="SearchExpiredTool">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+    </div>
+</div>
+<br />
+
+@if (toolList == null)
+{
+    <p><em>Ładowanie...</em></p>
+}
+else
+{
+    <table class='table'>
+        <thead>
+            <tr>
+                <th>Numer</th>
+                <th>Nazwa</th>
+                <th>Właściciel</th>
+                <th>Data ostatniej kontroli</th>
+                <th>Data następnej kontroli</th>
+                <th>Akcje</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var tool in expiredtoolList)
+            {
+                <tr>
+                    <td>@tool.numer_przyrzadu</td>
+                    <td>@tool.nazwa</td>
+                    <td>@tool.wlasciciel</td>
+                    <td>@tool.data_ostatniej_kontroli</td>
+                    <td>@tool.data_nastepnej_kontroli</td>
+
+                    <td>
+                        <a href='/tool/edit/@tool.Id' class="btn btn-outline-dark" role="button"> <i class="fa fa-pencil-square-o"></i> Modyfikuj</a>
+                        <button class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteEmpModal"
+                                @onclick="(()=>DeleteConfirm(tool.Id))">
+                            <i class="fa fa-trash-o"></i>
+                            Usuń
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<div class="modal fade" id="deleteEmpModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Potwierdź usunięcie!!!</h3>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">X</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <tr>
+                        <td>Numer</td>
+                        <td>@tool.numer_przyrzadu</td>
+                    </tr>
+                    <tr>
+                        <td>Nazwa</td>
+                        <td>@tool.nazwa</td>
+                    </tr>
+                    <tr>
+                        <td>Właściciel</td>
+                        <td>@tool.wlasciciel</td>
+                    </tr>
+                    <tr>
+                        <td>Data ostatniej kontroli</td>
+                        <td>@tool.data_ostatniej_kontroli</td>
+                    </tr>
+                    <tr>
+                        <td>Data następnej kontroli</td>
+                        <td>@tool.data_nastepnej_kontroli</td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger" @onclick="(async () => await DeleteTool(tool.Id))" data-dismiss="modal">Usuń</button>
+                <button data-dismiss="modal" class="btn btn-light">Anuluj</button>
+            </div>
+        </div>
+    </div>
+</div>

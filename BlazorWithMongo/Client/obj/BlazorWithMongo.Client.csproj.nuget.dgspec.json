@@ -1,0 +1,158 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\STUDIA MAGISTERSKIE\\II semestr\\Zaawansowane techniki internetowe\\Blazor-CRUD-With-MongoDB-master\\Blazor-CRUD-With-MongoDB-master\\BlazorWithMongo\\BlazorWithMongo\\Client\\BlazorWithMongo.Client.csproj": {}
+  },
+  "projects": {
+    "E:\\STUDIA MAGISTERSKIE\\II semestr\\Zaawansowane techniki internetowe\\Blazor-CRUD-With-MongoDB-master\\Blazor-CRUD-With-MongoDB-master\\BlazorWithMongo\\BlazorWithMongo\\Client\\BlazorWithMongo.Client.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\STUDIA MAGISTERSKIE\\II semestr\\Zaawansowane techniki internetowe\\Blazor-CRUD-With-MongoDB-master\\Blazor-CRUD-With-MongoDB-master\\BlazorWithMongo\\BlazorWithMongo\\Client\\BlazorWithMongo.Client.csproj",
+        "projectName": "BlazorWithMongo.Client",
+        "projectPath": "E:\\STUDIA MAGISTERSKIE\\II semestr\\Zaawansowane techniki internetowe\\Blazor-CRUD-With-MongoDB-master\\Blazor-CRUD-With-MongoDB-master\\BlazorWithMongo\\BlazorWithMongo\\Client\\BlazorWithMongo.Client.csproj",
+        "packagesPath": "C:\\Users\\dawid\\.nuget\\packages\\",
+        "outputPath": "E:\\STUDIA MAGISTERSKIE\\II semestr\\Zaawansowane techniki internetowe\\Blazor-CRUD-With-MongoDB-master\\Blazor-CRUD-With-MongoDB-master\\BlazorWithMongo\\BlazorWithMongo\\Client\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\dawid\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {
+              "E:\\STUDIA MAGISTERSKIE\\II semestr\\Zaawansowane techniki internetowe\\Blazor-CRUD-With-MongoDB-master\\Blazor-CRUD-With-MongoDB-master\\BlazorWithMongo\\BlazorWithMongo\\Shared\\BlazorWithMongo.Shared.csproj": {
+                "projectPath": "E:\\STUDIA MAGISTERSKIE\\II semestr\\Zaawansowane techniki internetowe\\Blazor-CRUD-With-MongoDB-master\\Blazor-CRUD-With-MongoDB-master\\BlazorWithMongo\\BlazorWithMongo\\Shared\\BlazorWithMongo.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Blazor": {
+              "target": "Package",
+              "version": "[3.2.0-preview1.20073.1, )"
+            },
+            "Microsoft.AspNetCore.Blazor.Build": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.2.0-preview1.20073.1, )"
+            },
+            "Microsoft.AspNetCore.Blazor.DevServer": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.2.0-preview1.20073.1, )"
+            },
+            "Microsoft.AspNetCore.Blazor.HttpClient": {
+              "target": "Package",
+              "version": "[3.2.0-preview1.20073.1, )"
+            },
+            "Syncfusion.Blazor": {
+              "target": "Package",
+              "version": "[18.1.0.45, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\STUDIA MAGISTERSKIE\\II semestr\\Zaawansowane techniki internetowe\\Blazor-CRUD-With-MongoDB-master\\Blazor-CRUD-With-MongoDB-master\\BlazorWithMongo\\BlazorWithMongo\\Shared\\BlazorWithMongo.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\STUDIA MAGISTERSKIE\\II semestr\\Zaawansowane techniki internetowe\\Blazor-CRUD-With-MongoDB-master\\Blazor-CRUD-With-MongoDB-master\\BlazorWithMongo\\BlazorWithMongo\\Shared\\BlazorWithMongo.Shared.csproj",
+        "projectName": "BlazorWithMongo.Shared",
+        "projectPath": "E:\\STUDIA MAGISTERSKIE\\II semestr\\Zaawansowane techniki internetowe\\Blazor-CRUD-With-MongoDB-master\\Blazor-CRUD-With-MongoDB-master\\BlazorWithMongo\\BlazorWithMongo\\Shared\\BlazorWithMongo.Shared.csproj",
+        "packagesPath": "C:\\Users\\dawid\\.nuget\\packages\\",
+        "outputPath": "E:\\STUDIA MAGISTERSKIE\\II semestr\\Zaawansowane techniki internetowe\\Blazor-CRUD-With-MongoDB-master\\Blazor-CRUD-With-MongoDB-master\\BlazorWithMongo\\BlazorWithMongo\\Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\dawid\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.10.1, )"
+            },
+            "Syncfusion.Blazor": {
+              "target": "Package",
+              "version": "[18.1.0.45, )"
+            },
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

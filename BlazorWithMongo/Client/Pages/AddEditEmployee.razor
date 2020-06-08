@@ -1,0 +1,44 @@
+﻿@page "/employee/add"
+@page "/employee/edit/{empID}"
+@inherits AddEditEmployeeModel
+
+<h1>@Title pracownika</h1>
+<hr />
+
+
+<EditForm Model="@emp" OnValidSubmit="SaveEmployee">
+    <DataAnnotationsValidator />
+    <div class="form-group row">
+        <label class="control-label col-md-12">Imię i Nazwisko</label>
+        <div class="col-md-4">
+            <input class="form-control" @bind="emp.Name" />
+        </div>
+        <ValidationMessage For="@(() => emp.Name)" />
+    </div>
+    <div class="form-group row">
+        <label class="control-label col-md-12">Nr ewidencyjny</label>
+        <div class="col-md-4">
+            <input class="form-control" @bind="emp.nrew" />
+        </div>
+        <ValidationMessage For="@(() => emp.nrew)" />
+    </div>
+    <div class="form-group row">
+        <label class="control-label col-md-12">Dział</label>
+        <div class="col-md-4">
+            <select class="form-control" @bind="emp.dzial">
+                <option value="">-- Wybierz dział --</option>
+                <option value="Obróbki cieplne">Obróbki cieplne</option>
+                <option value="Procesy Specjalne">Procesy Specjalne</option>
+                <option value="Kontrola Finalna">Kontrola Finalna</option>
+                <option value="Obrabiarki CNC">Obrabiarki CNC</option>
+                <option value="Labolatorium">Labolatorium</option>
+            </select>
+        </div>
+        <ValidationMessage For="@(() => emp.dzial)" />
+    </div>
+   
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Zapisz</button>
+        <button class="btn btn-light" @onclick="Cancel">Anuluj</button>
+    </div>
+</EditForm>
